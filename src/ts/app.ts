@@ -11,6 +11,8 @@ const handleSubmit = (e: any): void => {
   const item: string = createItem(itemName)
 
   addItem(item)
+
+  bindEvents()
 }
 
 const addItem = (item: string): void => {
@@ -29,4 +31,29 @@ const createItem = (itemName: string) => {
   return item
 }
 
+const handleItemClick = (e: any) => {
+  e.stopPropagation()
+  
+  const target: HTMLElement = e.target
+  const item: HTMLElement = target.parentElement
+
+  if (target.classList.contains('list__item-checkbox')) {
+    
+  } else if (target.classList.contains('list__item-delete-button')) {
+    item.remove()
+  }
+}
+
+const bindEvents = (): void => {
+  const items: HTMLCollection = list.children
+
+  Array.from(items).forEach(item => {
+    item.removeEventListener('click', handleItemClick)
+    item.addEventListener('click', handleItemClick)
+  })
+}
+
 inputForm.addEventListener('submit', handleSubmit)
+document.addEventListener("DOMContentLoaded", (e) => { 
+  bindEvents()
+})
