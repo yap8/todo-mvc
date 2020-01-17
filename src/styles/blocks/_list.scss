@@ -8,6 +8,12 @@
     width: 32px;
     align-self: center; 
     margin-right: 16px;
+    flex-shrink: 0;
+    font-size: 0;
+    cursor: pointer;
+    &--active {
+      font-size: 22px;
+    }
   }
   &__item-textfield {
     width: 100%;
@@ -19,6 +25,7 @@
   &__item-delete-button {
     font-size: 32px;
     padding: 0 4px;
+    flex-shrink: 0;
     cursor: pointer;
   }
 }

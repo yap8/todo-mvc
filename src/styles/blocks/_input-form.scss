@@ -10,8 +10,9 @@
     margin-right: 16px;
   }
   &__add-button {
-    width: 128px;
+    padding: 0 16px;
     font-size: 32px;
+    flex-shrink: 0;
     cursor: pointer;
   }
 }

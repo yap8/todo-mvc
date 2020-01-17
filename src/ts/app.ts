@@ -24,7 +24,7 @@ const addItem = (item: string): void => {
 const createItem = (itemName: string): string => {
   const item: string = `
     <li class="list__item">
-      <input type="checkbox" class="list__item-checkbox">
+      <button class="list__item-checkbox">&check;</button>
       <input type="text" class="list__item-textfield" value="${itemName}">
       <button class="list__item-delete-button">Delete</button>
     </li>
@@ -40,7 +40,7 @@ const handleItemClick = (e: any): void => {
   const item: HTMLElement = target.parentElement
 
   if (target.classList.contains('list__item-checkbox')) {
-
+    target.classList.toggle('list__item-checkbox--active')
   } else if (target.classList.contains('list__item-delete-button')) {
     item.remove()
   }
