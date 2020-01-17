@@ -8,6 +8,8 @@ const handleSubmit = (e: any): void => {
 
   const itemName: string = formTextfield.value
 
+  formTextfield.value = ''
+
   const item: string = createItem(itemName)
 
   addItem(item)
