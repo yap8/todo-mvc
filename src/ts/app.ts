@@ -19,7 +19,7 @@ const addItem = (item: string): void => {
   list.insertAdjacentHTML('beforeend', item)
 }
 
-const createItem = (itemName: string) => {
+const createItem = (itemName: string): string => {
   const item: string = `
     <li class="list__item">
       <input type="checkbox" class="list__item-checkbox">
@@ -31,14 +31,14 @@ const createItem = (itemName: string) => {
   return item
 }
 
-const handleItemClick = (e: any) => {
+const handleItemClick = (e: any): void => {
   e.stopPropagation()
   
   const target: HTMLElement = e.target
   const item: HTMLElement = target.parentElement
 
   if (target.classList.contains('list__item-checkbox')) {
-    
+
   } else if (target.classList.contains('list__item-delete-button')) {
     item.remove()
   }
