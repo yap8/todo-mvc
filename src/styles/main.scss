@@ -1,2 +1,14 @@
-@import '~normalize.css'
+@import '~normalize.css';
+@import 'reset';
+@import 'mixins';
+
+* {
+  font-family: Roboto, sans-serif;
+}
+
+@import 'blocks/header';
+@import 'blocks/section-input-form';
+@import 'blocks/input-form';
+@import 'blocks/section-list';
+@import 'blocks/list';
 

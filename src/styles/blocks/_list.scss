@@ -1,0 +1,24 @@
+.list {
+  &__item {
+    display: flex;
+    margin-bottom: 16px;
+  }
+  &__item-checkbox {
+    height: 32px;
+    width: 32px;
+    align-self: center; 
+    margin-right: 16px;
+  }
+  &__item-textfield {
+    width: 100%;
+    font-size: 32px;
+    margin-right: 16px;
+    padding: 4px;
+    border: 0;
+  }
+  &__item-delete-button {
+    font-size: 32px;
+    padding: 0 4px;
+    cursor: pointer;
+  }
+}

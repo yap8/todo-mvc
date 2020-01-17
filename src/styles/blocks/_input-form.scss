@@ -1,0 +1,17 @@
+.input-form {
+  display: flex;
+  justify-content: center;
+  &__textfield {
+    font-size: 32px;
+    padding: 4px;
+    padding-left: 8px;
+    width: 100%;
+    max-width: 512px;
+    margin-right: 16px;
+  }
+  &__add-button {
+    width: 128px;
+    font-size: 32px;
+    cursor: pointer;
+  }
+}
