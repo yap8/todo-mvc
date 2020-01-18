@@ -3,11 +3,7 @@ const formTextfield: HTMLInputElement = document.querySelector('#form-textfield'
 const formAddButton: HTMLInputElement = document.querySelector('#form-add-button')
 const list: HTMLElement = document.querySelector('#list')
 
-let storage: any[] = [
-  { itemName: 'Learn javascript', id: Math.random(), completed: true },
-  { itemName: 'Create a todo list', id: Math.random(), completed: false },
-  { itemName: 'Create cooler projects', id: Math.random(), completed: false }
-]
+let storage: any[] = []
 
 const handleSubmit = (e: any): void => {
   e.preventDefault()
@@ -81,7 +77,23 @@ const renderItems = (): void => {
   bindEvents()
 }
 
+const storeItems = (): void => {
+  localStorage.setItem('items', JSON.stringify(storage))
+}
+
+const getStoredItems = (): any[] => {
+  const items: string = localStorage.getItem('items')
+
+  return JSON.parse(items)
+}
+
 inputForm.addEventListener('submit', handleSubmit)
-document.addEventListener("DOMContentLoaded", (e) => { 
+
+window.addEventListener("DOMContentLoaded", (e) => {
+  storage = getStoredItems() || []
   renderItems()
+})
+window.addEventListener('beforeunload', () => {
+  storeItems()
+  return null
 })
