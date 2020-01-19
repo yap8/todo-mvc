@@ -17,6 +17,9 @@
       border-color: #42A5F5;
       box-shadow: 0 0 0 2px #42A5F5;
     }
+    @media (max-width: 768px) {
+      font-size: 22px;  
+    }
   }
   &__add-button {
     border: 1px solid #888;
@@ -31,6 +34,9 @@
       outline: 0;
       border-color: #42A5F5;
       box-shadow: 0 0 0 2px #42A5F5;
+    }
+    @media (max-width: 768px) {
+      font-size: 22px;  
     }
   }
 }

@@ -4,8 +4,10 @@
   &__item {
     display: flex;
     color: #222;
-    padding: 4px;
     margin-bottom: 16px;
+    @media (max-width: 768px) {
+      margin-bottom: 8px;
+    }
   }
   &__item-checkbox {
     border: 1px solid #888;
@@ -28,6 +30,11 @@
       border-color: #42A5F5;
       box-shadow: 0 0 0 2px #42A5F5;
     }
+    @media (max-width: 768px) {
+      margin-right: 4px;
+      height: 26px;
+      width: 26px; 
+    }
   }
   &__item-textfield {
     width: 100%;
@@ -40,6 +47,10 @@
       outline: 0;
       border-color: #42A5F5;
       box-shadow: 0 0 0 2px #42A5F5;
+    }
+    @media (max-width: 768px) {
+      font-size: 22px;
+      margin-right: 4px; 
     }
   }
   &__item-delete-button {
@@ -55,6 +66,9 @@
       outline: 0;
       border-color: #42A5F5;
       box-shadow: 0 0 0 2px #42A5F5;
+    }
+    @media (max-width: 768px) {
+      font-size: 22px; 
     }
   }
 }
