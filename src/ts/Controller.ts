@@ -38,7 +38,6 @@ class Controller {
   }
   editItem({ item, itemName }): void {
     this.model.editItem(item, itemName)
-    this.renderItems()
   }
   renderItems(): void {
     const items = this.model.getItems()
