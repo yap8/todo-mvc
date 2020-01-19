@@ -5,7 +5,7 @@ Prototype
 
 ## Todo 
 * ~~Add local storage~~
-* Add footer
+* ~~Add footer~~
 * Add validation
 * Implement MVC (in process)
 * Make items editable
