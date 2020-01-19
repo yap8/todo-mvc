@@ -6,7 +6,7 @@ Prototype
 ## Todo 
 * ~~Add local storage~~
 * ~~Add footer~~
-* Add validation
+* ~~Add validation~~
 * Implement MVC (in process)
 * Make items editable
 * ~~Split .js files into modules~~
