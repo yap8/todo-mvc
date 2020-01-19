@@ -8,7 +8,7 @@ class Model {
   storeItemsToLocalstorage(): void {
     localStorage.setItem('items', JSON.stringify(this.storage))
   }
-  storeItemsFromLocalstorage() {
+  storeItemsFromLocalstorage(): void {
     const items: any[] = JSON.parse(localStorage.getItem('items'))
   
     this.storage = items

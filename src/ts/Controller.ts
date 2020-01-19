@@ -35,8 +35,6 @@ class Controller {
     this.model.completeItem(item)
     this.renderItems()
   }
-  itemClicked({ target, item }): void {
-  }
   renderItems(): void {
     const items = this.model.getItems()
     this.view.renderItems(items)

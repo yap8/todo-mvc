@@ -48,7 +48,7 @@ class View extends EventEmitter {
       item.addEventListener('click', this.itemClicked.bind(this))
     })
   }
-  itemClicked(e): void {
+  itemClicked(e: any): void {
     e.stopPropagation()
 
     const target: HTMLElement = e.target
