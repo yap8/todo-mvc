@@ -9,6 +9,7 @@ class Controller {
     view.on('addItem', this.addItem.bind(this))
     view.on('deleteItem', this.deleteItem.bind(this))
     view.on('completeItem', this.completeItem.bind(this))
+    view.on('editItem', this.editItem.bind(this))
     view.on('handleLoad', this.handleLoad.bind(this))
     view.on('handleUnload', this.handleUnload.bind(this))
   }
@@ -35,7 +36,9 @@ class Controller {
     this.model.completeItem(item)
     this.renderItems()
   }
-  itemClicked({ target, item }): void {
+  editItem({ item, itemName }): void {
+    this.model.editItem(item, itemName)
+    this.renderItems()
   }
   renderItems(): void {
     const items = this.model.getItems()

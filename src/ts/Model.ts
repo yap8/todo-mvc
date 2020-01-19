@@ -8,7 +8,7 @@ class Model {
   storeItemsToLocalstorage(): void {
     localStorage.setItem('items', JSON.stringify(this.storage))
   }
-  storeItemsFromLocalstorage() {
+  storeItemsFromLocalstorage(): void {
     const items: any[] = JSON.parse(localStorage.getItem('items'))
   
     this.storage = items
@@ -22,10 +22,18 @@ class Model {
   deleteItem(item: object): void {
     this.storage = this.storage.filter(storedItem => storedItem.id !== +item.id)
   }
-  completeItem(item: any): void {
+  completeItem(item: HTMLElement): void {
     this.storage = this.storage.map(storedItem => {
       if (storedItem.id === +item.id) {
         storedItem.completed = !storedItem.completed
+      }
+      return storedItem
+    })
+  }
+  editItem(item: HTMLElement, itemName: string): void {
+    this.storage = this.storage.map(storedItem => {
+      if (storedItem.id === +item.id) {
+        storedItem.itemName = itemName
       }
       return storedItem
     })

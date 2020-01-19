@@ -44,11 +44,30 @@ class View extends EventEmitter {
     const items: HTMLCollection = this.list.children
 
     Array.from(items).forEach(item => {
+      const itemTextfield = item.querySelector('.list__item-textfield')
+
+      itemTextfield.removeEventListener('blur', this.itemEdited.bind(this))
+      itemTextfield.addEventListener('blur', this.itemEdited.bind(this))
+
+      itemTextfield.removeEventListener('keypress', this.itemEdited.bind(this))
+      itemTextfield.addEventListener('keypress', this.itemEdited.bind(this))
+
       item.removeEventListener('click', this.itemClicked.bind(this))
       item.addEventListener('click', this.itemClicked.bind(this))
     })
   }
-  itemClicked(e): void {
+  itemEdited(e: any): void {
+    const target: HTMLInputElement = e.target
+    const item: HTMLElement = target.parentElement
+    const itemName: string = target.value
+
+    if (e.type === 'keypress' && e.keyCode === 13) {
+      target.blur()
+    } else if (e.type === 'blur') {
+      this.emit('editItem', { item, itemName })
+    }
+  }
+  itemClicked(e: any): void {
     e.stopPropagation()
 
     const target: HTMLElement = e.target
