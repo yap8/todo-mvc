@@ -1,4 +1,4 @@
-export const createItem = ({ itemName, id, completed }): string => {
+export const stringifyItem = ({ itemName, id, completed }): string => {
   const item: string = `
     <li class="list__item" id="${id}">
       <button class="list__item-checkbox ${completed ? 'list__item-checkbox--active' : ''}"}>&check;</button>

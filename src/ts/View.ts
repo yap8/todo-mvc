@@ -1,5 +1,5 @@
 import EventEmitter from './EventEmitter'
-import { createItem } from './utils'
+import { stringifyItem } from './utils'
 
 class View extends EventEmitter {
   inputForm: HTMLElement
@@ -32,7 +32,7 @@ class View extends EventEmitter {
     this.list.innerHTML = ''
 
     items.forEach(item => {
-      this.list.insertAdjacentHTML('beforeend', createItem(item))
+      this.list.insertAdjacentHTML('beforeend', stringifyItem(item))
     })
     
     this.bindEvents()

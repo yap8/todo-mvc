@@ -6,7 +6,6 @@ class Controller {
     this.model = model
     this.view = view
 
-    
     view.on('addItem', this.addItem.bind(this))
     view.on('itemClicked', this.itemClicked.bind(this))
     view.on('handleLoad', this.handleLoad.bind(this))

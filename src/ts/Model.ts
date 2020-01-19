@@ -22,7 +22,7 @@ class Model {
   deleteItem(item: object): void {
     this.storage = this.storage.filter(storedItem => storedItem.id !== +item.id)
   }
-  completeItem(item: object): void {
+  completeItem(item: any): void {
     this.storage = this.storage.map(storedItem => {
       if (storedItem.id === +item.id) {
         storedItem.completed = !storedItem.completed
