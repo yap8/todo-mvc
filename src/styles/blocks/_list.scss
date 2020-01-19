@@ -1,6 +1,9 @@
 .list {
+  max-height: 60vh;
+  overflow-y: auto;
   &__item {
     display: flex;
+    padding: 4px;
     margin-bottom: 16px;
   }
   &__item-checkbox {
