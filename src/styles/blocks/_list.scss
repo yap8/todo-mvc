@@ -23,13 +23,24 @@
       background-color: #1ea433;
       font-size: 22px;
     }
+    &:focus {
+      outline: 0;
+      border-color: #42A5F5;
+      box-shadow: 0 0 0 2px #42A5F5;
+    }
   }
   &__item-textfield {
     width: 100%;
     font-size: 32px;
     margin-right: 16px;
     padding: 4px;
-    border: 0;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    &:focus {
+      outline: 0;
+      border-color: #42A5F5;
+      box-shadow: 0 0 0 2px #42A5F5;
+    }
   }
   &__item-delete-button {
     border: 1px solid #888;
@@ -40,5 +51,10 @@
     padding: 0 8px;
     flex-shrink: 0;
     cursor: pointer;
+    &:focus {
+      outline: 0;
+      border-color: #42A5F5;
+      box-shadow: 0 0 0 2px #42A5F5;
+    }
   }
 }

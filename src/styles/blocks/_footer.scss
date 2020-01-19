@@ -10,4 +10,17 @@
     font-size: 22px;
     height: 10vh;
   }
+  &__link {
+    color: #42A5F5;
+    text-decoration: none;
+    padding: 4px;
+    border-radius: 3px;
+    margin-left: -2px;
+    &:focus {
+      text-decoration: underline;
+      outline: 0;
+      border-color: #42A5F5;
+      box-shadow: 0 0 0 3px #42A5F5;
+    }
+  }
 }

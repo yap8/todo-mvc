@@ -12,6 +12,11 @@
     width: 100%;
     max-width: 512px;
     margin-right: 16px;
+    &:focus {
+      outline: 0;
+      border-color: #42A5F5;
+      box-shadow: 0 0 0 2px #42A5F5;
+    }
   }
   &__add-button {
     border: 1px solid #888;
@@ -22,5 +27,10 @@
     font-size: 32px;
     flex-shrink: 0;
     cursor: pointer;
+    &:focus {
+      outline: 0;
+      border-color: #42A5F5;
+      box-shadow: 0 0 0 2px #42A5F5;
+    }
   }
 }
