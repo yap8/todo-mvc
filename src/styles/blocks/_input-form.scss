@@ -3,6 +3,9 @@
   display: flex;
   justify-content: center;
   &__textfield {
+    border: 1px solid #888;
+    border-radius: 3px;
+    color: #222;
     font-size: 32px;
     padding: 4px;
     padding-left: 8px;
@@ -11,6 +14,10 @@
     margin-right: 16px;
   }
   &__add-button {
+    border: 1px solid #888;
+    background-color: #222;
+    border-radius: 3px;
+    color: #fff;
     padding: 0 16px;
     font-size: 32px;
     flex-shrink: 0;
