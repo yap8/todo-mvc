@@ -24,12 +24,16 @@
   &__add-button {
     border: 1px solid #888;
     background-color: #222;
+    transition: background-color .2s ease;
     border-radius: 3px;
     color: #fff;
     padding: 0 16px;
     font-size: 32px;
     flex-shrink: 0;
     cursor: pointer;
+    &:hover {
+      background-color: darken(#222, 15);
+    }
     &:focus {
       outline: 0;
       border-color: #42A5F5;
