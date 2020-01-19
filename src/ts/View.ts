@@ -18,10 +18,13 @@ class View extends EventEmitter {
     this.inputForm.addEventListener('submit', (e) => {
       e.preventDefault()
 
-      const itemName = this.formTextfield.value
-      this.formTextfield.value = ''
+      const itemName = this.formTextfield.value.trim()
 
-      this.emit('addItem', { itemName })
+      if (itemName) {
+        this.formTextfield.value = ''
+
+        this.emit('addItem', { itemName })
+      }
     })
 
     window.addEventListener("DOMContentLoaded", () => this.emit('handleLoad', {}))
