@@ -2,6 +2,9 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
   &__textfield {
     border: 1px solid #888;
     border-radius: 3px;
@@ -18,7 +21,8 @@
       box-shadow: 0 0 0 2px #42A5F5;
     }
     @media (max-width: 768px) {
-      font-size: 22px;  
+      margin-right: 4px;
+      font-size: 20px;  
     }
   }
   &__add-button {
@@ -40,7 +44,7 @@
       box-shadow: 0 0 0 2px #42A5F5;
     }
     @media (max-width: 768px) {
-      font-size: 22px;  
+      font-size: 20px;  
     }
   }
 }
