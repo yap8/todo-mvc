@@ -51,7 +51,11 @@ class View extends EventEmitter {
     const target: HTMLElement = e.target
     const item: HTMLElement = target.parentElement
 
-    this.emit('itemClicked', { target, item })
+    if (target.classList.contains('list__item-checkbox')) {
+      this.emit('completeItem', { item })
+    } else if (target.classList.contains('list__item-delete-button')) {
+      this.emit('deleteItem', { item })
+    }
   }
 }
 
