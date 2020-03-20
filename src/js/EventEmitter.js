@@ -1,14 +1,12 @@
 class EventEmitter {
-  events: object
-
   constructor() {
     this.events = {}
   }
-  on(type: string, listener: object): void {
+  on(type, listener) {
     this.events[type] = this.events[type] || []
     this.events[type].push(listener)
   }
-  emit(type: string, arg: object): void {
+  emit(type, arg) {
     if (this.events[type]) {
       this.events[type].forEach(listener => listener(arg))
     }

@@ -1,28 +1,26 @@
 class Model {
-  storage: any[]
-
   constructor() {
     this.storage = []
   }
 
-  storeItemsToLocalstorage(): void {
+  storeItemsToLocalstorage() {
     localStorage.setItem('items', JSON.stringify(this.storage))
   }
-  storeItemsFromLocalstorage(): void {
-    const items: any[] = JSON.parse(localStorage.getItem('items')) || []
+  storeItemsFromLocalstorage() {
+    const items = JSON.parse(localStorage.getItem('items')) || []
   
     this.storage = items
   }
-  addItem(item: object): void {
+  addItem(item) {
     this.storage.push(item)
   }
-  getItems(): object[] {
+  getItems() {
     return this.storage
   }
-  deleteItem(item: object): void {
+  deleteItem(item) {
     this.storage = this.storage.filter(storedItem => storedItem.id !== +item.id)
   }
-  completeItem(item: HTMLElement): void {
+  completeItem(item) {
     this.storage = this.storage.map(storedItem => {
       if (storedItem.id === +item.id) {
         storedItem.completed = !storedItem.completed
@@ -30,7 +28,7 @@ class Model {
       return storedItem
     })
   }
-  editItem(item: HTMLElement, itemName: string): void {
+  editItem(item, itemName) {
     this.storage = this.storage.map(storedItem => {
       if (storedItem.id === +item.id) {
         storedItem.itemName = itemName

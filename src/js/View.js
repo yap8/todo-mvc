@@ -2,11 +2,6 @@ import EventEmitter from './EventEmitter'
 import { stringifyItem } from './utils'
 
 class View extends EventEmitter {
-  inputForm: HTMLElement
-  formTextfield: HTMLInputElement
-  formAddButton: HTMLInputElement
-  list: HTMLElement
-
   constructor() {
     super()
 
@@ -31,7 +26,7 @@ class View extends EventEmitter {
     window.addEventListener('beforeunload', () => this.emit('handleUnload', {}))
   }
 
-  renderItems(items: any[]): void {
+  renderItems(items) {
     this.list.innerHTML = ''
 
     items.forEach(item => {
@@ -40,8 +35,8 @@ class View extends EventEmitter {
     
     this.bindEvents()
   }
-  bindEvents(): void {
-    const items: HTMLCollection = this.list.children
+  bindEvents() {
+    const items = this.list.children
 
     Array.from(items).forEach(item => {
       const itemTextfield = item.querySelector('.list__item-textfield')
@@ -56,10 +51,10 @@ class View extends EventEmitter {
       item.addEventListener('click', this.itemClicked.bind(this))
     })
   }
-  itemEdited(e: any): void {
-    const target: HTMLInputElement = e.target
-    const item: HTMLElement = target.parentElement
-    const itemName: string = target.value
+  itemEdited(e) {
+    const target = e.target
+    const item = target.parentElement
+    const itemName = target.value
 
     if (e.type === 'keypress' && e.keyCode === 13) {
       target.blur()
@@ -67,11 +62,11 @@ class View extends EventEmitter {
       this.emit('editItem', { item, itemName })
     }
   }
-  itemClicked(e: any): void {
+  itemClicked(e) {
     e.stopPropagation()
 
-    const target: HTMLElement = e.target
-    const item: HTMLElement = target.parentElement
+    const target = e.target
+    const item = target.parentElement
 
     if (target.classList.contains('list__item-checkbox')) {
       this.emit('completeItem', { item })

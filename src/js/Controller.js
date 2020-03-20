@@ -1,7 +1,4 @@
 class Controller {
-  model: any
-  view: any
-
   constructor(model, view) {
     this.model = model
     this.view = view
@@ -14,32 +11,32 @@ class Controller {
     view.on('handleUnload', this.handleUnload.bind(this))
   }
   
-  addItem({ itemName }): void {
-    const item: object = { itemName, id: Math.random(), completed: false }
+  addItem({ itemName }) {
+    const item = { itemName, id: Math.random(), completed: false }
     
     this.model.addItem(item)
 
     this.renderItems()
   }
-  handleLoad(): void {
+  handleLoad() {
     this.model.storeItemsFromLocalstorage()
     this.renderItems()
   }
-  handleUnload(): void {
+  handleUnload() {
     this.model.storeItemsToLocalstorage()
   }
-  deleteItem({ item }): void {
+  deleteItem({ item }) {
     this.model.deleteItem(item)
     this.renderItems()
   }
-  completeItem({ item }): void {
+  completeItem({ item }) {
     this.model.completeItem(item)
     this.renderItems()
   }
-  editItem({ item, itemName }): void {
+  editItem({ item, itemName }) {
     this.model.editItem(item, itemName)
   }
-  renderItems(): void {
+  renderItems() {
     const items = this.model.getItems()
     this.view.renderItems(items)
   }
