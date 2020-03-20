@@ -1,8 +1,5 @@
 # Todo list
 
-## Stage
-Prototype
-
 ## Todo 
 * ~~Add local storage~~
 * ~~Add footer~~
