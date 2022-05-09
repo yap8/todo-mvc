@@ -1,11 +1,7 @@
 # Todo list
 
-## Todo 
-* ~~Add local storage~~
-* ~~Add footer~~
-* ~~Add validation~~
-* ~~Implement MVC~~
-* ~~Improve accessibility~~
-* ~~Make items editable~~
-* ~~Split .js files into modules~~
-* ~~Deploy project~~
+Todo list app built using MVC pattern with vanilla JS.
+
+## Demo
+
+http://yap8.github.io/todo-mvc
